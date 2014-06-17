@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx</Extensions>
+    </Filter>
+    <Filter Include="net">
+      <UniqueIdentifier>{74fa58f1-41d1-4bd1-99d7-53ecea4753ac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="neo">
+      <UniqueIdentifier>{790de6d3-8c0a-4d96-a6b6-63c57f005789}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="thread">
+      <UniqueIdentifier>{a4e72cf1-070d-45d3-bad5-3ecf9447c154}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="packet">
+      <UniqueIdentifier>{a94bb6c1-5623-46a4-9a3c-a9f0a03276e9}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="CondensedTraceOutput.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="RawSocketPacketInterface.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="StandardTraceOutput.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tcptrace.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="WinpcapPacketInterface.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="net\InetAddress.cpp">
+      <Filter>net</Filter>
+    </ClCompile>
+    <ClCompile Include="net\Socket.cpp">
+      <Filter>net</Filter>
+    </ClCompile>
+    <ClCompile Include="net\SocketException.cpp">
+      <Filter>net</Filter>
+    </ClCompile>
+    <ClCompile Include="neo\CommandOption.cpp">
+      <Filter>neo</Filter>
+    </ClCompile>
+    <ClCompile Include="neo\CommandOptionParser.cpp">
+      <Filter>neo</Filter>
+    </ClCompile>
+    <ClCompile Include="neo\StringUtils.cpp">
+      <Filter>neo</Filter>
+    </ClCompile>
+    <ClCompile Include="neo\TimeOut.cpp">
+      <Filter>neo</Filter>
+    </ClCompile>
+    <ClCompile Include="thread\Thread.cpp">
+      <Filter>thread</Filter>
+    </ClCompile>
+    <ClCompile Include="packet\ARP.cpp">
+      <Filter>packet</Filter>
+    </ClCompile>
+    <ClCompile Include="packet\InterfaceEnumerator.cpp">
+      <Filter>packet</Filter>
+    </ClCompile>
+    <ClCompile Include="packet\iputils.cpp">
+      <Filter>packet</Filter>
+    </ClCompile>
+    <ClCompile Include="packet\PacketInterface.cpp">
+      <Filter>packet</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CondensedTraceOutput.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="IRawPacketInterface.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ITraceOutput.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RawSocketPacketInterface.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="StandardTraceOutput.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="tcptrace.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="WinpcapPacketInterface.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="net\InetAddress.h">
+      <Filter>net</Filter>
+    </ClInclude>
+    <ClInclude Include="net\InitWinsock.h">
+      <Filter>net</Filter>
+    </ClInclude>
+    <ClInclude Include="net\Socket.h">
+      <Filter>net</Filter>
+    </ClInclude>
+    <ClInclude Include="net\SocketException.h">
+      <Filter>net</Filter>
+    </ClInclude>
+    <ClInclude Include="neo\CommandOption.h">
+      <Filter>neo</Filter>
+    </ClInclude>
+    <ClInclude Include="neo\CommandOptionParser.h">
+      <Filter>neo</Filter>
+    </ClInclude>
+    <ClInclude Include="neo\MemoryBlock.h">
+      <Filter>neo</Filter>
+    </ClInclude>
+    <ClInclude Include="neo\RefPtr.h">
+      <Filter>neo</Filter>
+    </ClInclude>
+    <ClInclude Include="neo\StringUtils.h">
+      <Filter>neo</Filter>
+    </ClInclude>
+    <ClInclude Include="neo\TimeOut.h">
+      <Filter>neo</Filter>
+    </ClInclude>
+    <ClInclude Include="thread\Thread.h">
+      <Filter>thread</Filter>
+    </ClInclude>
+    <ClInclude Include="packet\ARP.h">
+      <Filter>packet</Filter>
+    </ClInclude>
+    <ClInclude Include="packet\InterfaceEnumerator.h">
+      <Filter>packet</Filter>
+    </ClInclude>
+    <ClInclude Include="packet\iputils.h">
+      <Filter>packet</Filter>
+    </ClInclude>
+    <ClInclude Include="packet\ListAccessor.h">
+      <Filter>packet</Filter>
+    </ClInclude>
+    <ClInclude Include="packet\PacketDefs.h">
+      <Filter>packet</Filter>
+    </ClInclude>
+    <ClInclude Include="packet\PacketException.h">
+      <Filter>packet</Filter>
+    </ClInclude>
+    <ClInclude Include="packet\PacketInterface.h">
+      <Filter>packet</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="license.txt" />
+    <Text Include="readme.txt" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,61 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+<HEAD>
+  <TITLE>tracetcp</TITLE>
+  <LINK REV="made" HREF="mailto:">
+  <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+  <META NAME="generator" CONTENT="NoteTab Light 4.95">
+  <META NAME="author" CONTENT="">
+  <META NAME="description" CONTENT="">
+  <META NAME="keywords" CONTENT="">
+</HEAD>
+
+<BODY BGCOLOR="#000050" TEXT="#000000" LINK="#0000FF" VLINK="#800080" ALINK="#FF0000">
+
+<TABLE ALIGN="center" BGCOLOR="#909090" BORDER="0" CELLSPACING="10" CELLPADDING="5" WIDTH="100%">
+  <TR ALIGN="center" VALIGN="middle">
+    <TD ALIGN="left" VALIGN="top" WIDTH = "200" BGCOLOR="#e0e0f0">
+      <!-- Sets up an IFRAME that conatins the common menu for the whole site. -->
+	<IFRAME SRC="tracetcp_menu.html" ALIGN="top" WIDTH = "200" HEIGHT = "600" FRAMEBORDER="0"></IFRAME>
+    </TD>
+
+    <TD ALIGN="left" VALIGN="top" BGCOLOR="#e0e0f0">
+      <h3>Perform a Port scan</h3>
+<!-- Descriptive text. -->
+
+<p>
+In a similar way to the previous trace (Scanning for blocked outgoing ports), <b>tracetcp</b> can be used to determine what ports are open an a particular host. To port scan the initial TTL of the packets must be greater than the number of hops to the host being scanned so that the connect packets don't expire on the way. Below is a port scan of my router that shows FTP, telnet and HTTP are all open. (the latest version of <b>tracetcp</b> has an option -s that makes scanning easier)
+</p>
+
+<!-- end Descriptive text. -->
+
+
+<!-- Program output. -->
+<TABLE ALIGN="center" BORDER="1" CELLSPACING="0" CELLPADDING="5" WIDTH="95%" BGCOLOR="#ffffff" >
+  <TR>
+   <TD>
+    <PRE>$ tracetcp 192.168.0.1 -r 20 80 -c -m 1 -t 100 -h 50
+[192.168.0.1:20]  1     *       *       *       Request timed out.
+[192.168.0.1:21]  1     Dest. in 1 ms. Port OPEN on 192.168.0.1
+[192.168.0.1:22]  1     *       *       *       Request timed out.
+[192.168.0.1:23]  1     Dest. in 2 ms. Port OPEN on 192.168.0.1
+[192.168.0.1:24]  1     *       *       *       Request timed out.
+[192.168.0.1:25]  1     *       *       *       Request timed out.
+[192.168.0.1:26]  1     *       *       *       Request timed out.
+
+repeats until.....
+
+[192.168.0.1:77]  1     *       *       *       Request timed out.
+[192.168.0.1:78]  1     *       *       *       Request timed out.
+[192.168.0.1:79]  1     *       *       *       Request timed out.
+[192.168.0.1:80]  1     Dest. in 3 ms. Port OPEN on 192.168.0.1</PRE>
+   </TD>
+  </TR>
+</TABLE>
+<!-- End Program output. -->
+
+  </TD>
+ </TR>
+</TABLE>
+</BODY>
+</HTML>

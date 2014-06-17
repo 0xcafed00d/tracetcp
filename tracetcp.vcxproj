@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{F94EE9A1-AFE2-4775-AF92-6695271A87C1}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v120_xp</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v120_xp</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>11.0.60610.1</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>Debug\</OutDir>
+    <IntDir>Debug\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>Release\</OutDir>
+    <IntDir>Release\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>wpcap\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_CRT_SECURE_NO_WARNINGS;_DEBUG;_CONSOLE;HAVE_REMOTE;WPCAP;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <OutputFile>$(OutDir)tracetcp.exe</OutputFile>
+      <AdditionalLibraryDirectories>wpcap/lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(OutDir)tracetcp.pdb</ProgramDatabaseFile>
+      <SubSystem>Console</SubSystem>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>wpcap\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_CRT_SECURE_NO_WARNINGS;NDEBUG;_CONSOLE;HAVE_REMOTE;WPCAP;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <OutputFile>$(OutDir)tracetcp.exe</OutputFile>
+      <AdditionalLibraryDirectories>wpcap/lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="CondensedTraceOutput.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="RawSocketPacketInterface.cpp" />
+    <ClCompile Include="StandardTraceOutput.cpp" />
+    <ClCompile Include="tcptrace.cpp" />
+    <ClCompile Include="WinpcapPacketInterface.cpp" />
+    <ClCompile Include="net\InetAddress.cpp" />
+    <ClCompile Include="net\Socket.cpp" />
+    <ClCompile Include="net\SocketException.cpp" />
+    <ClCompile Include="neo\CommandOption.cpp" />
+    <ClCompile Include="neo\CommandOptionParser.cpp" />
+    <ClCompile Include="neo\StringUtils.cpp" />
+    <ClCompile Include="neo\TimeOut.cpp" />
+    <ClCompile Include="thread\Thread.cpp" />
+    <ClCompile Include="packet\ARP.cpp" />
+    <ClCompile Include="packet\InterfaceEnumerator.cpp" />
+    <ClCompile Include="packet\iputils.cpp" />
+    <ClCompile Include="packet\PacketInterface.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CondensedTraceOutput.h" />
+    <ClInclude Include="IRawPacketInterface.h" />
+    <ClInclude Include="ITraceOutput.h" />
+    <ClInclude Include="RawSocketPacketInterface.h" />
+    <ClInclude Include="StandardTraceOutput.h" />
+    <ClInclude Include="tcptrace.h" />
+    <ClInclude Include="WinpcapPacketInterface.h" />
+    <ClInclude Include="net\InetAddress.h" />
+    <ClInclude Include="net\InitWinsock.h" />
+    <ClInclude Include="net\Socket.h" />
+    <ClInclude Include="net\SocketException.h" />
+    <ClInclude Include="neo\CommandOption.h" />
+    <ClInclude Include="neo\CommandOptionParser.h" />
+    <ClInclude Include="neo\MemoryBlock.h" />
+    <ClInclude Include="neo\RefPtr.h" />
+    <ClInclude Include="neo\StringUtils.h" />
+    <ClInclude Include="neo\TimeOut.h" />
+    <ClInclude Include="thread\Thread.h" />
+    <ClInclude Include="packet\ARP.h" />
+    <ClInclude Include="packet\InterfaceEnumerator.h" />
+    <ClInclude Include="packet\iputils.h" />
+    <ClInclude Include="packet\ListAccessor.h" />
+    <ClInclude Include="packet\PacketDefs.h" />
+    <ClInclude Include="packet\PacketException.h" />
+    <ClInclude Include="packet\PacketInterface.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="license.txt" />
+    <Text Include="readme.txt" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
