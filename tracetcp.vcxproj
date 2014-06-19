@@ -102,7 +102,6 @@
     <ClCompile Include="neo\CommandOptionParser.cpp" />
     <ClCompile Include="neo\StringUtils.cpp" />
     <ClCompile Include="neo\TimeOut.cpp" />
-    <ClCompile Include="thread\Thread.cpp" />
     <ClCompile Include="packet\ARP.cpp" />
     <ClCompile Include="packet\InterfaceEnumerator.cpp" />
     <ClCompile Include="packet\iputils.cpp" />
@@ -126,7 +125,6 @@
     <ClInclude Include="neo\RefPtr.h" />
     <ClInclude Include="neo\StringUtils.h" />
     <ClInclude Include="neo\TimeOut.h" />
-    <ClInclude Include="thread\Thread.h" />
     <ClInclude Include="packet\ARP.h" />
     <ClInclude Include="packet\InterfaceEnumerator.h" />
     <ClInclude Include="packet\iputils.h" />

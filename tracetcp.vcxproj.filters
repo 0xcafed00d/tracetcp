@@ -19,9 +19,6 @@
     <Filter Include="neo">
       <UniqueIdentifier>{790de6d3-8c0a-4d96-a6b6-63c57f005789}</UniqueIdentifier>
     </Filter>
-    <Filter Include="thread">
-      <UniqueIdentifier>{a4e72cf1-070d-45d3-bad5-3ecf9447c154}</UniqueIdentifier>
-    </Filter>
     <Filter Include="packet">
       <UniqueIdentifier>{a94bb6c1-5623-46a4-9a3c-a9f0a03276e9}</UniqueIdentifier>
     </Filter>
@@ -65,9 +62,6 @@
     </ClCompile>
     <ClCompile Include="neo\TimeOut.cpp">
       <Filter>neo</Filter>
-    </ClCompile>
-    <ClCompile Include="thread\Thread.cpp">
-      <Filter>thread</Filter>
     </ClCompile>
     <ClCompile Include="packet\ARP.cpp">
       <Filter>packet</Filter>
@@ -133,9 +127,6 @@
     </ClInclude>
     <ClInclude Include="neo\TimeOut.h">
       <Filter>neo</Filter>
-    </ClInclude>
-    <ClInclude Include="thread\Thread.h">
-      <Filter>thread</Filter>
     </ClInclude>
     <ClInclude Include="packet\ARP.h">
       <Filter>packet</Filter>
