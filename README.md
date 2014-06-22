@@ -61,12 +61,12 @@ Options:
                   fast some host seem to detect this as some form of 
                   flood and stop responding for a time. This option 
                   disables the 0.5 second timer, so the traces occur
-		              faster.
+                  faster.
 
     -R            Use raw socket interface to send/receive packets
                   this will not work on XP sp2. 
-		              (you still need winpcap installed)
-		  
+                  (you still need winpcap installed)
+
     -g address    use the specified host as a a gateway to remote
                   systems rather than the default gateway.
 
