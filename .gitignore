@@ -19,3 +19,15 @@
 *.exe
 *.out
 *.app
+
+# misc visiual studio stuff
+*.ilk
+*.log
+*.pdb
+*.tlog
+*.lastbuildstate
+*.idb
+*.suo
+*.sdf
+
+
