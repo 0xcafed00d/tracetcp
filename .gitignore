@@ -20,7 +20,7 @@
 *.out
 *.app
 
-# misc visiual studio stuff
+# misc visual studio stuff
 *.ilk
 *.log
 *.pdb
