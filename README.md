@@ -80,8 +80,8 @@ Examples:
 
 # Revision History
 
-### version 0.99.5 beta ??-??-2014
-* Upgraded solution to Visual Studio 2014
+### version 1.0.0 23-06-2014
+* Upgraded solution to Visual Studio 2013
 * Moved Repo to GitHub
 
 ### version 0.99.4 beta 23-05-2005

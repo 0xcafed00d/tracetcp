@@ -48,9 +48,17 @@ const char optionCharUseLocalIF  = 'i';
 const char optionCharForceGW     = 'g';
 const char optionCharUseRawSock  = 'R';
 
+void displayVersion ()
+{
+    cout << endl << "tracetcp v1.0.0 (c) 2014 L.M.Witek" << endl << "build date: " << __DATE__ << " " << __TIME__ << endl;
+    cout << "Homepage: http://SimulatedSimian.github.io/tracetcp" << endl;
+    cout << "Issues? visit: https://github.com/SimulatedSimian/tracetcp/issues" << endl << endl;
+}
 
 void displayHelp (neo::CommandOptionParser& cp)
 {
+	displayVersion();
+
     cout << endl << "Usage:  tracetcp host [options]" << endl;
     cout << "    where host = hostName|ipAddress[:portNumber|serviceName]" << endl;
     cout << "    if portNumber or serviceName is not present then port 80 (http) is assumed." << endl << endl;
@@ -65,12 +73,7 @@ void displayHelp (neo::CommandOptionParser& cp)
     cout << "    tracetcp 192.168.0.1 -n -t 500" << endl << endl;
 }
 
-void displayVersion ()
-{
-    cout << endl << "tracetcp v0.99.4 beta (c) 2005 L.M.Witek" << endl << "build date: " << __DATE__ << " " << __TIME__ << endl;
-    cout << "For the latest version visit: http://tracetcp.sourceforge.net/" << endl;
-    cout << "Questions? Comments? mailto: codetrifle [at] users.sourceforge.net" << endl << endl;
-}
+
 
 bool populateSettings(neo::CommandOptionParser& cp, TCPTraceSettings& settings)
 {   
