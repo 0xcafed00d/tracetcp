@@ -133,10 +133,6 @@
     <ClInclude Include="packet\PacketException.h" />
     <ClInclude Include="packet\PacketInterface.h" />
   </ItemGroup>
-  <ItemGroup>
-    <Text Include="license.txt" />
-    <Text Include="readme.txt" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

@@ -150,8 +150,4 @@
       <Filter>packet</Filter>
     </ClInclude>
   </ItemGroup>
-  <ItemGroup>
-    <Text Include="license.txt" />
-    <Text Include="readme.txt" />
-  </ItemGroup>
 </Project>
