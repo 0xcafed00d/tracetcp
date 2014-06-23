@@ -51,7 +51,7 @@ Options:
 
     -s p1 p2      Easy port scan mode. gives the same result as
                   setting the following options:
-	          -cnr p1 p2 -h 128 -m 1 -p 1
+                  -cnr p1 p2 -h 128 -m 1 -p 1
 
     -F            Disables the Anti-flood timer. Normally tracetcp
                   waits *at least* 0.5 seconds between sending out 
@@ -59,12 +59,12 @@ Options:
                   fast some host seem to detect this as some form of 
                   flood and stop responding for a time. This option 
                   disables the 0.5 second timer, so the traces occur
-		  faster.
+                  faster.
 
     -R            Use raw socket interface to send/receive packets
                   this will not work on XP sp2. 
-		  (you still need winpcap installed)
-		  
+                  (you still need winpcap installed)
+
     -g address    use the specified host as a a gateway to remote
                   systems rather than the default gateway.
 
@@ -78,8 +78,8 @@ Examples:
 
 # Revision History
 
-### version 0.99.5 beta ??-??-2014
-* Upgraded solution to Visual Studio 2014
+### version 1.0.0 23-06-2014
+* Upgraded solution to Visual Studio 2013
 * Moved Repo to GitHub
 
 ### version 0.99.4 beta 23-05-2005
