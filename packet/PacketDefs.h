@@ -180,8 +180,8 @@ namespace packet
 
     /*
     TCP Header Format 
-        0                   1                   2                   3   
-        0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 
+     0                   1                   2                   3   
+     0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 
     +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
     |          Source Port          |       Destination Port        |
     +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
@@ -224,7 +224,10 @@ namespace packet
         };
         n_int<u_short> window;
         n_int<u_short> checksum;
-        n_int<u_short> windowPtr;
+		n_int<u_short> urgentPtr;
+		n_int<u_char>  mssOptionKind; // maximum segment size option
+		n_int<u_char>  mssOptionLen;
+		n_int<u_short> mssOptionVal;
 
         void clear ()
         {

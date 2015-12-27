@@ -133,8 +133,11 @@ void createTCPPacket (TCPIPHeader& h, const net::InetAddress& target, const net:
     fh.tcp.syn = 1;
     fh.tcp.seqNum = seqNum;
     fh.tcp.ackNum = 0;
-    fh.tcp.dataOffset = 5;
+    fh.tcp.dataOffset = 6;
     fh.tcp.window = 0x3fff;
+	fh.tcp.mssOptionKind = 2;
+	fh.tcp.mssOptionLen = 4;
+	fh.tcp.mssOptionVal = 1460;
 
     fh.tcp.checksum = in_cksum((u_short*)&fh, sizeof(fh));
 
