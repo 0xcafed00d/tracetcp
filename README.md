@@ -81,7 +81,7 @@ Examples:
 # Revision History
 
 ### version 1.0.1 05-01-2016
-* make a generated SYN packet look as much like a SYN from chrome on windows as packets with no options were baing dropped by some hosts
+* make a generated SYN packet look as much like a SYN from chrome on windows as packets with no options were being dropped by some hosts
 
 ### version 1.0.0 23-06-2014
 * Upgraded solution to Visual Studio 2013
