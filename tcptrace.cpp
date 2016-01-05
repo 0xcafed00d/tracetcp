@@ -123,7 +123,7 @@ void createTCPPacket (TCPIPHeader& h, const net::InetAddress& target, const net:
     fh.fip.clear();
     fh.tcp.clear();
     
-    fh.fip.length = 20;    
+    fh.fip.length = sizeof(TCPHeader);    
     fh.fip.destIP = target.getIPAddress();
     fh.fip.sourceIP = source.getIPAddress();
     fh.fip.protocol = IPPROTO_TCP;
@@ -133,11 +133,19 @@ void createTCPPacket (TCPIPHeader& h, const net::InetAddress& target, const net:
     fh.tcp.syn = 1;
     fh.tcp.seqNum = seqNum;
     fh.tcp.ackNum = 0;
-    fh.tcp.dataOffset = 6;
-    fh.tcp.window = 0x3fff;
+	fh.tcp.dataOffset = sizeof(TCPHeader) / 4;
+    fh.tcp.window = 0x2000;
 	fh.tcp.mssOptionKind = 2;
 	fh.tcp.mssOptionLen = 4;
 	fh.tcp.mssOptionVal = 1460;
+	fh.tcp.optionNop1 = 1;
+	fh.tcp.winScaleOptionKind = 3;
+	fh.tcp.winScaleOptionLen = 3;
+	fh.tcp.winScaleOptionVal = 2;
+	fh.tcp.optionNop2 = 1;
+	fh.tcp.optionNop3 = 1;
+	fh.tcp.TCPSACKOptionKind = 4;
+	fh.tcp.TCPSACKOptionLen = 2;
 
     fh.tcp.checksum = in_cksum((u_short*)&fh, sizeof(fh));
 

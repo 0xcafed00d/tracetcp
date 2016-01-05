@@ -228,6 +228,14 @@ namespace packet
 		n_int<u_char>  mssOptionKind; // maximum segment size option
 		n_int<u_char>  mssOptionLen;
 		n_int<u_short> mssOptionVal;
+		n_int<u_char>  optionNop1;
+		n_int<u_char>  winScaleOptionKind;
+		n_int<u_char>  winScaleOptionLen;
+		n_int<u_char>  winScaleOptionVal;
+		n_int<u_char>  optionNop2;
+		n_int<u_char>  optionNop3;
+		n_int<u_char>  TCPSACKOptionKind;
+		n_int<u_char>  TCPSACKOptionLen;
 
         void clear ()
         {
