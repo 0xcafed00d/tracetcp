@@ -237,14 +237,18 @@ void doTraceTCP (TCPTraceSettings& settings, ITraceOutput& out, TraceTerminator&
             out.startHop(hop); 
 
             bool hopComplete = false;
-            for (DWORD m = 0; (m < settings.pingsPerHop) & !hopComplete; m++)
-            {
-                if (terminator.isTerminated())
-                    throw std::string("Terminate Event Occurred.");
+			for (DWORD m = 0; (m < settings.pingsPerHop) & !hopComplete; m++)
+			{
+				if (terminator.isTerminated())
+					throw std::string("Terminate Event Occurred.");
 
-                DWORD pingTime;
-                net::InetAddress resp;
-                ResponsePacketTypes respType = doTCPPing (rawInterface, target, rawInterface->getSourceAddress(), hop, resp, pingTime, settings.maxTimeout);
+				DWORD pingTime;
+				net::InetAddress resp;
+				ResponsePacketTypes respType = doTCPPing(rawInterface, target, rawInterface->getSourceAddress(), hop, resp, pingTime, settings.maxTimeout);
+
+				if (respType == TCP_RST) {
+					respType = doTCPPing(rawInterface, target, rawInterface->getSourceAddress(), 127, resp, pingTime, settings.maxTimeout);
+				}
 
                 if (respType == NOT_VALID)
                 {
