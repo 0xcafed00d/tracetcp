@@ -80,6 +80,9 @@ Examples:
 
 # Revision History
 
+### version 1.0.2 07-01-2016
+* if destination reached but port is closed, this maybe due to some hosts not allowing connections with ttl = 0. Resend ping with large ttl to see if its really closed. 
+
 ### version 1.0.1 05-01-2016
 * make a generated SYN packet look as much like a SYN from chrome on windows as packets with no options were being dropped by some hosts
 

@@ -247,9 +247,11 @@ void doTraceTCP (TCPTraceSettings& settings, ITraceOutput& out, TraceTerminator&
 				ResponsePacketTypes respType = doTCPPing(rawInterface, target, rawInterface->getSourceAddress(), hop, resp, pingTime, settings.maxTimeout);
 
 				if (respType == TCP_RST) {
+					// destination reached but port is closed, this maybe due to some hosts not allowing connections with ttl = 0. 
+					// resend ping with large ttl to see if its really closed. 
 					respType = doTCPPing(rawInterface, target, rawInterface->getSourceAddress(), 127, resp, pingTime, settings.maxTimeout);
 				}
-
+				
                 if (respType == NOT_VALID)
                 {
                     out.pingResultTimeout();
