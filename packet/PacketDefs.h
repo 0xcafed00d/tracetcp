@@ -57,6 +57,21 @@ namespace packet
 			return memcmp(addr, that.addr, 6) == 0;
 		}
 
+		// HSRP v1 IP4 virtual MAC address range: 00:00:0c:07:ac:XX
+		// HSRP v2 IP4 virtual MAC address range: 00:00:0c:9f:fX:XX
+		bool isHSRP()
+		{
+			const char HSRPv1[] = "00:00:0c:07:ac";
+			const char HSRPv2[] = "00:00:0c:9f:f";
+
+			char buffer[32];
+			sprintf(buffer, "%02x:%02x:%02x:%02x:%02x:%02x", addr[0].get(), addr[1].get(), addr[2].get(), addr[3].get(), addr[4].get(), addr[5].get());
+
+			if ((memcmp(buffer, HSRPv1, sizeof(HSRPv1) - 1) == 0) || (memcmp(buffer, HSRPv2, sizeof(HSRPv2) - 1) == 0))
+				return 1;
+
+			return 0;
+		}
     };
 
     #define ETHERNET_TYPE_IP  0x800

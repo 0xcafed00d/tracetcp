@@ -102,6 +102,9 @@ void WinpcapPacketInterface::initialise (net::InetAddress target)
 		m_ethernetHeader.type = ETHERNET_TYPE_IP;
 		m_ethernetHeader.srcAddr = m_sourceMAC;
 		m_ethernetHeader.destAddr = m_destinationMAC;
+
+		//if (m_destinationMAC.isHSRP())
+		//	cout << "HSRP MAC Address detected!" << endl;
 	}
 }
 
@@ -130,11 +133,14 @@ bool WinpcapPacketInterface::recPacket (neo::MemoryBlock& buffer, net::InetAddre
 		{
 			packet::EthernetHeader* header = (packet::EthernetHeader*)packetData;
 			packet::IPHeader* ipheader = (packet::IPHeader*)(packetData + sizeof(packet::EthernetHeader));
-			if (header->srcAddr == m_destinationMAC && header->destAddr == m_sourceMAC && header->type == ETHERNET_TYPE_IP)
+			if (header->destAddr == m_sourceMAC && header->type == ETHERNET_TYPE_IP)
 			{
-				memcpy (buffer.getBlock(), packetData + sizeof(packet::EthernetHeader),  packetHeader->caplen - sizeof(packet::EthernetHeader));
-				from.setIPAddress(ipheader->sourceIP.get());
-				return true;
+				if (m_destinationMAC.isHSRP() || header->srcAddr == m_destinationMAC)
+				{
+					memcpy(buffer.getBlock(), packetData + sizeof(packet::EthernetHeader), packetHeader->caplen - sizeof(packet::EthernetHeader));
+					from.setIPAddress(ipheader->sourceIP.get());
+					return true;
+				}
 			}
 		}
 	}
