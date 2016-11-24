@@ -80,6 +80,9 @@ Examples:
 
 # Revision History
 
+### version 1.0.3 24-11-2016
+* Add support for HSRP routers (fix provided by Dresco)
+
 ### version 1.0.2 07-01-2016
 * if destination reached but port is closed, this maybe due to some hosts not allowing connections with ttl = 0. Resend ping with large ttl to see if its really closed. 
 
