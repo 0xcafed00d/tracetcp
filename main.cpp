@@ -50,7 +50,7 @@ const char optionCharUseRawSock  = 'R';
 
 void displayVersion ()
 {
-    cout << endl << "tracetcp v1.0.2 (c) 2016 L.M.Witek" << endl << "build date: " << __DATE__ << " " << __TIME__ << endl;
+    cout << endl << "tracetcp v1.0.3 (c) 2016 L.M.Witek" << endl << "build date: " << __DATE__ << " " << __TIME__ << endl;
     cout << "Homepage: http://SimulatedSimian.github.io/tracetcp" << endl;
     cout << "Issues? visit: https://github.com/SimulatedSimian/tracetcp/issues" << endl << endl;
 }
